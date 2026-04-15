@@ -320,18 +320,17 @@ main { position: relative; z-index: 1; }
 
 /* HERO STATS */
 .hero-stats {
-  position: absolute;
-  right: 3rem;
-  top: 50%;
-  transform: translateY(-50%);
+  position: static;
+  align-self: flex-end;
+  margin-top: 2.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   animation: fadeLeft 0.8s 1.2s ease both;
 }
 @keyframes fadeLeft {
-  from { transform: translateY(-50%) translateX(40px); opacity: 0; }
-  to { transform: translateY(-50%) translateX(0); opacity: 1; }
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 .stat {
   text-align: right;
@@ -876,7 +875,7 @@ footer {
     <div class="hero-tag">Available for internships</div>
     <h1 class="hero-name">
       <span class="glitch" data-text="PRADEEP">PRADEEP</span><br>
-      <span class="grad">KUMAR</span>
+      <span class="grad">PARTHASARATHY</span>
     </h1>
     <p class="hero-title">
       Cloud Computing Student &nbsp;/&nbsp; <span class="typewriter-wrap"><span id="typewriter" class="typewriter"></span></span>
@@ -886,7 +885,7 @@ footer {
     </p>
     <div class="hero-cta">
       <a href="#projects" class="btn-primary">View My Work →</a>
-      <a href="https://pradeep-sys1910.github.io/cloudvault-frontend/dashboard.html" target="_blank" class="btn-outline">☁ Cloud Vault Drive</a>
+      <a href="https://pradeep-sys1910.github.io/cloudvault-frontend/login.html" target="_blank" class="btn-outline">☁ Cloud Vault Drive</a>
     </div>
     <div class="hero-scroll">
       <div class="scroll-line"></div>
@@ -971,7 +970,7 @@ footer {
       <div class="project-card featured reveal">
         <span class="featured-badge">Featured Project</span>
         <div class="project-num">PROJECT — 001</div>
-        <h3 class="project-title">Cloud Vault — Personal Drive</h3>
+        <h3 class="project-title"><a href="https://pradeep-sys1910.github.io/cloudvault-frontend/login.html" target="_blank">Cloud Vault — Personal Drive</a></h3>
         <p class="project-desc">A cloud-based file storage and dashboard interface. A full frontend implementation with a modern dashboard for managing files in the cloud — built as a real-world application of cloud computing concepts.</p>
         <div class="project-tags">
           <span class="tag tag-teal">Cloud</span>
@@ -979,7 +978,7 @@ footer {
           <span class="tag tag-coral">Dashboard</span>
           <span class="tag tag-purple">HTML/CSS/JS</span>
         </div>
-        <a href="https://pradeep-sys1910.github.io/cloudvault-frontend/dashboard.html" target="_blank" class="project-link">Launch Project →</a>
+        <a href="https://pradeep-sys1910.github.io/cloudvault-frontend/login.html" target="_blank" class="project-link">Launch Project →</a>
       </div>
 
       <div class="project-card reveal reveal-delay-1">
@@ -1032,7 +1031,7 @@ footer {
           I'm a <span>cloud computing</span> student who loves turning ideas into real, working things.
         </p>
         <p class="about-body">
-          Currently in my 2nd year of B.Tech, I'm building strong foundations in both software development and cloud infrastructure. I enjoy working on projects that push my skills further — from writing clean code in Python and Java to designing full-stack web applications.<br><br>
+          Currently in my 3rd year of B.Tech, I'm building strong foundations in both software development and cloud infrastructure. I enjoy working on projects that push my skills further — from writing clean code in Python and Java to designing full-stack web applications.<br><br>
           My goal is to land a cloud/dev internship where I can contribute, learn from real engineers, and grow faster than in any classroom.
         </p>
         <div class="about-details">
@@ -1042,7 +1041,7 @@ footer {
           </div>
           <div class="detail-item">
             <div class="detail-label">Year</div>
-            <div class="detail-value">2nd Year</div>
+            <div class="detail-value">3rd Year</div>
           </div>
           <div class="detail-item">
             <div class="detail-label">Focus</div>
@@ -1057,17 +1056,17 @@ footer {
       <div class="about-right reveal reveal-delay-2">
         <div class="timeline">
           <div class="timeline-item">
-            <div class="timeline-year">2023</div>
+            <div class="timeline-year">2024</div>
             <div class="timeline-title">Started B.Tech in Cloud Computing</div>
             <div class="timeline-desc">Began the journey into tech — learned C, C++, and the fundamentals of computing.</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-year">2024</div>
+            <div class="timeline-year">2025</div>
             <div class="timeline-title">Explored Full Stack Web Dev</div>
             <div class="timeline-desc">Picked up HTML, CSS, JavaScript, PHP, and SQL. Built first real projects including a library management system.</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-year">2025</div>
+            <div class="timeline-year">2026</div>
             <div class="timeline-title">Built Cloud Vault Project</div>
             <div class="timeline-desc">Launched a cloud-based frontend drive project. Dived deeper into Python, Java, and cloud concepts.</div>
           </div>
@@ -1094,16 +1093,16 @@ footer {
         Open to internship opportunities, collabs, and interesting projects. Drop a message — I'll get back to you.
       </p>
       <div class="contact-links">
-        <a href="https://pradeep-sys1910.github.io/cloudvault-frontend/dashboard.html" target="_blank" class="contact-link reveal reveal-delay-1">
+        <a href="https://pradeep-sys1910.github.io/cloudvault-frontend/login.html" target="_blank" class="contact-link reveal reveal-delay-1">
           <div>
             <div class="contact-link-label">Cloud Vault Project</div>
             <div class="contact-link-type">Live Demo</div>
           </div>
           <span class="contact-link-arrow">→</span>
         </a>
-        <a href="mailto:pradeep@email.com" class="contact-link reveal reveal-delay-2">
+        <a href="mailto:pradeepparthasarathy1910@gmail.com" class="contact-link reveal reveal-delay-2">
           <div>
-            <div class="contact-link-label">pradeep@email.com</div>
+            <div class="contact-link-label">pradeepparthasarathy1910@gmail.com</div>
             <div class="contact-link-type">Email</div>
           </div>
           <span class="contact-link-arrow">→</span>
@@ -1115,7 +1114,7 @@ footer {
           </div>
           <span class="contact-link-arrow">→</span>
         </a>
-        <a href="https://linkedin.com" target="_blank" class="contact-link reveal reveal-delay-4">
+        <a href="https://www.linkedin.com/in/pradeep-parthasarathy-0274793b1" target="_blank" class="contact-link reveal reveal-delay-4">
           <div>
             <div class="contact-link-label">LinkedIn Profile</div>
             <div class="contact-link-type">LinkedIn</div>
@@ -1129,7 +1128,7 @@ footer {
 
 <footer>
   <span class="footer-logo">PRADEEP.DEV</span>
-  <span>Designed &amp; built with ☁ &nbsp;·&nbsp; 2025</span>
+  <span>Designed &amp; built with ☁ &nbsp;·&nbsp; 2026</span>
   <span>B.Tech Cloud Computing</span>
 </footer>
 
