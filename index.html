@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pradeep Parthasarathy — Portfolio</title>
+<meta name="description" content="Pradeep Parthasarathy — Full-stack developer and cloud computing student. Builder of BeLife (www.belife.site), Cloud Vault and more.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Bricolage+Grotesque:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -42,7 +43,7 @@ body{
   line-height:1.6;
 }
 
-/* ── NOISE + GLOW BG ────────────────────────────── */
+/* ── GLOW BG ────────────────────────────────────── */
 .bg-glow{
   position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;
 }
@@ -149,7 +150,6 @@ nav{
   display:flex;gap:2.5rem;flex-wrap:wrap;
   animation:up .7s .95s ease both;
 }
-.hero-stat{}
 .hero-stat-num{
   font-family:'Bricolage Grotesque',sans-serif;
   font-size:1.9rem;font-weight:800;color:var(--text);letter-spacing:-.04em;line-height:1;
@@ -166,7 +166,6 @@ nav{
 .photo-frame{
   position:relative;width:clamp(220px,28vw,360px);height:clamp(220px,28vw,360px);
 }
-/* spinning rings */
 .photo-frame::before,.photo-frame::after{
   content:'';position:absolute;border-radius:50%;pointer-events:none;
 }
@@ -207,7 +206,6 @@ nav{
 }
 .photo-badge i{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:blink 2s infinite;}
 
-/* scroll hint */
 .scroll-hint{
   position:absolute;bottom:2.5rem;left:clamp(1.5rem,5vw,4rem);
   display:flex;align-items:center;gap:.75rem;
@@ -289,16 +287,14 @@ nav{
   transition:border-color .3s,transform .3s,box-shadow .3s;
 }
 .proj::before{
-  content:'';position:absolute;inset:0;opacity:0;
+  content:'';position:absolute;inset:0;opacity:0;pointer-events:none;
   background:radial-gradient(ellipse at 20% 20%,rgba(79,142,255,.07),transparent 60%);
   transition:opacity .3s;
 }
 .proj:hover{border-color:rgba(79,142,255,.4);transform:translateY(-4px);box-shadow:0 20px 48px rgba(0,0,0,.35);}
 .proj:hover::before{opacity:1;}
 
-/* featured spans 2 cols */
 .proj.featured{grid-column:span 2;}
-/* current project spans full row */
 .proj.current{grid-column:span 3;border-color:rgba(16,185,129,.3);background:linear-gradient(135deg,rgba(16,185,129,.06),rgba(79,142,255,.04));}
 .proj.current:hover{border-color:rgba(16,185,129,.6);}
 
@@ -315,6 +311,7 @@ nav{
   padding:.2rem .7rem;border-radius:999px;
 }
 .badge-feat{background:rgba(79,142,255,.12);color:var(--blue);}
+.badge-acad{background:rgba(245,158,11,.12);color:var(--orange);}
 .badge-live{
   background:rgba(16,185,129,.12);color:var(--green);
   animation:livePulse 2s ease infinite;
@@ -341,28 +338,16 @@ nav{
 .t-orange{background:rgba(245,158,11,.1);color:#FCD34D;}
 .t-pink{background:rgba(236,72,153,.1);color:#F9A8D4;}
 
+.proj-links{display:flex;flex-wrap:wrap;gap:.75rem 1.75rem;}
 .proj-link{
   display:inline-flex;align-items:center;gap:.5rem;
   font-size:.82rem;font-weight:700;color:var(--cyan);text-decoration:none;
   transition:gap .2s;
 }
 .proj-link:hover{gap:.85rem;}
+.proj.current .proj-link{color:var(--green);}
 
-/* current project extra layout */
 .current-layout{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;}
-.current-progress{margin-top:1.5rem;}
-.cp-label{
-  display:flex;justify-content:space-between;align-items:center;
-  font-size:.75rem;font-weight:600;color:var(--sub);margin-bottom:.5rem;letter-spacing:.04em;
-}
-.cp-bar{height:6px;background:rgba(255,255,255,.06);border-radius:999px;overflow:hidden;}
-.cp-fill{
-  height:100%;border-radius:999px;
-  background:linear-gradient(90deg,var(--green),var(--cyan));
-  animation:progressLoad 1.2s 1s ease both;
-  transform:scaleX(0);transform-origin:left;
-}
-@keyframes progressLoad{to{transform:scaleX(1)}}
 
 .current-vision{
   background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.15);
@@ -402,7 +387,6 @@ nav{
 }
 
 .about-info{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.info-item{}
 .info-key{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:.25rem;}
 .info-val{font-size:.9rem;font-weight:700;color:var(--text);}
 
@@ -463,9 +447,8 @@ nav{
 .cc-violet{background:rgba(139,92,246,.12);}
 .cc-green{background:rgba(16,185,129,.1);}
 .cc-orange{background:rgba(245,158,11,.1);}
-.contact-card-text{}
 .cct-label{font-size:.92rem;font-weight:700;color:var(--text);}
-.cct-sub{font-size:.75rem;color:var(--dim);letter-spacing:.04em;text-transform:uppercase;margin-top:.15rem;}
+.cct-sub{font-size:.75rem;color:var(--dim);letter-spacing:.04em;text-transform:uppercase;margin-top:.15rem;word-break:break-all;}
 
 /* ── FOOTER ──────────────────────────────────────── */
 footer{
@@ -503,6 +486,11 @@ footer{
   .about-info{grid-template-columns:1fr;}
   footer{flex-direction:column;text-align:center;}
 }
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;}
+  .reveal{opacity:1;transform:none;}
+  .skill-card .sk-fill{transform:scaleX(var(--w));}
+}
 </style>
 </head>
 <body>
@@ -534,11 +522,12 @@ footer{
         Pradeep<br>
         <span class="line2">Parthasarathy</span>
       </h1>
-      <p class="hero-role"><strong>Cloud Computing Student</strong> &nbsp;·&nbsp; Full-Stack Dev &nbsp;·&nbsp; Builder</p>
-      <p class="hero-desc">3rd-year B.Tech student building scalable systems, full-stack apps, and now — a product that actually changes lives. One deployment at a time.</p>
+      <p class="hero-role"><strong>Full-Stack Developer</strong> &nbsp;·&nbsp; Cloud Computing Student &nbsp;·&nbsp; Builder</p>
+      <p class="hero-desc">3rd-year B.Tech student building scalable systems and full-stack apps — from cloud dashboards to BeLife, a platform live in production. One deployment at a time.</p>
       <div class="hero-btns">
         <a href="#projects" class="btn btn-primary">View My Work →</a>
-        <a href="https://pradeep-sys1910.github.io/cloudvault-frontend/login.html" target="_blank" class="btn btn-ghost">☁ Cloud Vault</a>
+        <a href="https://www.belife.site" target="_blank" rel="noopener" class="btn btn-ghost">🌿 Visit BeLife</a>
+        <a href="https://pradeep-sys1910.github.io/cloudvault-frontend/login.html" target="_blank" rel="noopener" class="btn btn-ghost">☁ Cloud Vault</a>
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
@@ -550,12 +539,12 @@ footer{
           <div class="hero-stat-label">Year B.Tech</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-num">5</div>
+          <div class="hero-stat-num">3</div>
           <div class="hero-stat-label">Projects Built</div>
         </div>
         <div class="hero-stat">
           <div class="hero-stat-num">1</div>
-          <div class="hero-stat-label">App In Progress</div>
+          <div class="hero-stat-label">Live Platform</div>
         </div>
       </div>
     </div>
@@ -585,45 +574,50 @@ footer{
       <h2 class="section-title reveal">What I work with</h2>
       <p class="section-sub reveal">Languages, tools, and platforms I've built real things with.</p>
       <div class="skills-grid">
-        <div class="skill-card reveal d1" data-w=".70">
+        <div class="skill-card reveal d1">
           <div class="sk-top"><span class="sk-name">Python</span><span class="sk-pct">70%</span></div>
           <div class="sk-bar"><div class="sk-fill" style="--w:.70"></div></div>
           <div class="sk-tag">Scripting · Automation</div>
         </div>
-        <div class="skill-card reveal d2" data-w=".65">
+        <div class="skill-card reveal d2">
           <div class="sk-top"><span class="sk-name">JavaScript</span><span class="sk-pct">65%</span></div>
           <div class="sk-bar"><div class="sk-fill" style="--w:.65"></div></div>
           <div class="sk-tag">Web · Frontend Logic</div>
         </div>
-        <div class="skill-card reveal d3" data-w=".78">
+        <div class="skill-card reveal d3">
           <div class="sk-top"><span class="sk-name">HTML &amp; CSS</span><span class="sk-pct">78%</span></div>
           <div class="sk-bar"><div class="sk-fill" style="--w:.78"></div></div>
           <div class="sk-tag">Markup · Styling</div>
         </div>
-        <div class="skill-card reveal d4" data-w=".60">
+        <div class="skill-card reveal d4">
+          <div class="sk-top"><span class="sk-name">React &amp; Next.js</span><span class="sk-pct">60%</span></div>
+          <div class="sk-bar"><div class="sk-fill" style="--w:.60"></div></div>
+          <div class="sk-tag">Frontend · App Router</div>
+        </div>
+        <div class="skill-card reveal d1">
+          <div class="sk-top"><span class="sk-name">Node.js &amp; Express</span><span class="sk-pct">62%</span></div>
+          <div class="sk-bar"><div class="sk-fill" style="--w:.62"></div></div>
+          <div class="sk-tag">REST APIs · Auth · Socket.IO</div>
+        </div>
+        <div class="skill-card reveal d2">
+          <div class="sk-top"><span class="sk-name">PostgreSQL &amp; SQL</span><span class="sk-pct">68%</span></div>
+          <div class="sk-bar"><div class="sk-fill" style="--w:.68"></div></div>
+          <div class="sk-tag">Databases · Prisma ORM</div>
+        </div>
+        <div class="skill-card reveal d3">
           <div class="sk-top"><span class="sk-name">Java</span><span class="sk-pct">60%</span></div>
           <div class="sk-bar"><div class="sk-fill" style="--w:.60"></div></div>
           <div class="sk-tag">OOP · DSA</div>
         </div>
-        <div class="skill-card reveal d1" data-w=".58">
+        <div class="skill-card reveal d4">
           <div class="sk-top"><span class="sk-name">C / C++</span><span class="sk-pct">58%</span></div>
           <div class="sk-bar"><div class="sk-fill" style="--w:.58"></div></div>
           <div class="sk-tag">Systems · Fundamentals</div>
         </div>
-        <div class="skill-card reveal d2" data-w=".68">
-          <div class="sk-top"><span class="sk-name">SQL &amp; DBMS</span><span class="sk-pct">68%</span></div>
-          <div class="sk-bar"><div class="sk-fill" style="--w:.68"></div></div>
-          <div class="sk-tag">Databases · Queries</div>
-        </div>
-        <div class="skill-card reveal d3" data-w=".52">
-          <div class="sk-top"><span class="sk-name">PHP</span><span class="sk-pct">52%</span></div>
-          <div class="sk-bar"><div class="sk-fill" style="--w:.52"></div></div>
-          <div class="sk-tag">Backend · Server-side</div>
-        </div>
-        <div class="skill-card reveal d4" data-w=".55">
+        <div class="skill-card reveal d1">
           <div class="sk-top"><span class="sk-name">Cloud Computing</span><span class="sk-pct">55%</span></div>
           <div class="sk-bar"><div class="sk-fill" style="--w:.55"></div></div>
-          <div class="sk-tag">Infrastructure · Services</div>
+          <div class="sk-tag">Vercel · Render · Neon · R2</div>
         </div>
       </div>
     </div>
@@ -634,40 +628,43 @@ footer{
     <div class="section-wrap">
       <div class="section-label reveal">02 — Projects</div>
       <h2 class="section-title reveal">Things I've built</h2>
-      <p class="section-sub reveal">From cloud storage dashboards to life-changing apps — real projects, real code.</p>
+      <p class="section-sub reveal">From a live full-stack platform to cloud dashboards and big data analytics — real projects, real code.</p>
 
       <div class="projects-bento">
 
-        <!-- CURRENT – Building Belife (full row) -->
+        <!-- BELIFE (full row) -->
         <div class="proj current reveal">
           <div class="current-layout">
             <div>
               <div class="proj-eyebrow">
-                <span class="proj-num">PROJECT — 005</span>
-                <span class="proj-badge badge-live">Currently Building</span>
+                <span class="proj-num">PROJECT — 001</span>
+                <span class="proj-badge badge-live">Live in Production</span>
               </div>
-              <h3 class="proj-title">Building Belife</h3>
-              <p class="proj-desc">An app designed to be your daily companion for mental strength, self-belief, and personal growth. Combining guided affirmations, habit tracking, and mindset tools — built to help people rewire how they think about themselves and their potential. Because the right app at the right moment can genuinely change a life.</p>
+              <h3 class="proj-title">BeLife — Blogging &amp; Community Platform</h3>
+              <p class="proj-desc">A full-stack platform built from scratch and deployed at www.belife.site. Users can write and publish blogs, interact through likes and comments, and chat in real time — with secure authentication, branded transactional emails, cloud media storage and SEO built in. Built around the idea that the right space at the right moment can help people grow.</p>
               <div class="proj-tags">
-                <span class="tag t-green">Life-tech</span>
-                <span class="tag t-blue">Mobile App</span>
-                <span class="tag t-violet">Mindset</span>
-                <span class="tag t-cyan">Habit Tracking</span>
-                <span class="tag t-orange">Self-belief</span>
+                <span class="tag t-blue">Next.js 14</span>
+                <span class="tag t-green">Express</span>
+                <span class="tag t-cyan">PostgreSQL</span>
+                <span class="tag t-violet">Prisma</span>
+                <span class="tag t-orange">Socket.IO</span>
+                <span class="tag t-pink">Tailwind</span>
               </div>
-              <div class="current-progress">
-                <div class="cp-label"><span>Build Progress</span><span style="color:var(--green)">35%</span></div>
-                <div class="cp-bar"><div class="cp-fill" style="width:35%"></div></div>
+              <div class="proj-links">
+                <a href="https://www.belife.site" target="_blank" rel="noopener" class="proj-link">Visit Live Site →</a>
+                <a href="https://github.com/Pradeep-sys1910/BELIFE-FRONTEND" target="_blank" rel="noopener" class="proj-link">Frontend Repo →</a>
+                <a href="https://github.com/Pradeep-sys1910/BELIFE-BACKEND" target="_blank" rel="noopener" class="proj-link">Backend Repo →</a>
               </div>
             </div>
             <div class="current-vision">
               <div class="vision-title">What it does</div>
               <ul class="vision-items">
-                <li>Daily affirmations &amp; belief-building routines</li>
-                <li>Streak-based habit tracker for positive actions</li>
-                <li>Mindset journal to track growth over time</li>
-                <li>Motivational content personalized to your journey</li>
-                <li>Built with the belief that one app can change your life</li>
+                <li>Secure auth: unique @username, email verification, JWT sessions, password reset and confirmed account deletion</li>
+                <li>Blog publishing with search, pagination, likes and comments</li>
+                <li>Real-time direct messaging with Socket.IO</li>
+                <li>Image uploads to Cloudflare R2 via short-lived presigned URLs, with per-user quotas</li>
+                <li>Branded emails via Brevo, plus SEO (sitemap, Open Graph) and a fully responsive UI</li>
+                <li>Deployed on Vercel, Render and Neon with a custom domain</li>
               </ul>
             </div>
           </div>
@@ -676,7 +673,7 @@ footer{
         <!-- FEATURED – Cloud Vault -->
         <div class="proj featured reveal">
           <div class="proj-eyebrow">
-            <span class="proj-num">PROJECT — 001</span>
+            <span class="proj-num">PROJECT — 002</span>
             <span class="proj-badge badge-feat">Featured</span>
           </div>
           <h3 class="proj-title">Cloud Vault — Personal Drive</h3>
@@ -687,45 +684,24 @@ footer{
             <span class="tag t-violet">Dashboard</span>
             <span class="tag t-blue">HTML/CSS/JS</span>
           </div>
-          <a href="https://pradeep-sys1910.github.io/cloudvault-frontend/login.html" target="_blank" class="proj-link">Launch Project →</a>
+          <div class="proj-links">
+            <a href="https://pradeep-sys1910.github.io/cloudvault-frontend/login.html" target="_blank" rel="noopener" class="proj-link">Launch Project →</a>
+          </div>
         </div>
 
-        <!-- Student Portal -->
+        <!-- BDE – Hadoop -->
         <div class="proj reveal">
-          <div class="proj-eyebrow"><span class="proj-num">PROJECT — 002</span></div>
-          <h3 class="proj-title">Student Portal UI</h3>
-          <p class="proj-desc">A responsive frontend portal with login, dashboard, and profile pages. Built with clean HTML, CSS and vanilla JavaScript.</p>
-          <div class="proj-tags">
-            <span class="tag t-blue">HTML</span>
-            <span class="tag t-blue">CSS</span>
-            <span class="tag t-cyan">JavaScript</span>
+          <div class="proj-eyebrow">
+            <span class="proj-num">PROJECT — 003</span>
+            <span class="proj-badge badge-acad">Academic</span>
           </div>
-          <a href="#" class="proj-link">View Details →</a>
-        </div>
-
-        <!-- Library System -->
-        <div class="proj reveal">
-          <div class="proj-eyebrow"><span class="proj-num">PROJECT — 003</span></div>
-          <h3 class="proj-title">Library Management System</h3>
-          <p class="proj-desc">Full CRUD app to manage books, members, and borrow records. Backend powered by PHP with a structured SQL database.</p>
+          <h3 class="proj-title">Airline Flight Delay Analytics</h3>
+          <p class="proj-desc">A Big Data Engineering team project that analyses airline flight data with the Hadoop ecosystem to uncover delay patterns.</p>
           <div class="proj-tags">
-            <span class="tag t-orange">SQL</span>
-            <span class="tag t-orange">PHP</span>
-            <span class="tag t-orange">DBMS</span>
+            <span class="tag t-cyan">Hadoop</span>
+            <span class="tag t-violet">Big Data</span>
+            <span class="tag t-orange">Analytics</span>
           </div>
-          <a href="#" class="proj-link">View Details →</a>
-        </div>
-
-        <!-- Python Scripts -->
-        <div class="proj reveal">
-          <div class="proj-eyebrow"><span class="proj-num">PROJECT — 004</span></div>
-          <h3 class="proj-title">Python Automation Scripts</h3>
-          <p class="proj-desc">A collection of utility scripts and command-line tools — file organizers, basic data scrapers, and calculators built while learning Python.</p>
-          <div class="proj-tags">
-            <span class="tag t-green">Python</span>
-            <span class="tag t-violet">Automation</span>
-          </div>
-          <a href="#" class="proj-link">View Details →</a>
         </div>
 
       </div>
@@ -738,14 +714,15 @@ footer{
       <div class="section-label reveal">03 — About</div>
       <div class="about-grid">
         <div>
-          <h2 class="about-intro-text reveal">I build things that <em>matter</em> — code, systems, and now, a product that can change lives.</h2>
-          <p class="about-body-text reveal">Currently in my 3rd year of B.Tech Cloud Computing, I've gone from learning C to building cloud dashboards, full-stack apps, and a life-tech product. I love the intersection of good code and real human impact.<br><br>My goal: land a cloud or dev internship where I grow alongside real engineers — and keep shipping Building Belife on the side.</p>
+          <h2 class="about-intro-text reveal">I build things that <em>matter</em> — clean code, solid systems, and real products people can use.</h2>
+          <p class="about-body-text reveal">Currently in my 3rd year of B.Tech, I've gone from learning C to shipping a full-stack platform with authentication, real-time messaging, cloud storage and a live domain. I'm also working as a Web Development Intern at SaiKet Systems, and I love the intersection of good code and real human impact.<br><br>My goal: land a cloud or dev internship where I grow alongside real engineers — while I keep improving BeLife.</p>
           <div class="about-chips reveal">
-            <span class="chip">Cloud Computing</span>
             <span class="chip">Full Stack Dev</span>
+            <span class="chip">Cloud Computing</span>
             <span class="chip">Python</span>
+            <span class="chip">C / C++</span>
             <span class="chip">Java</span>
-            <span class="chip">SQL</span>
+            <span class="chip">PostgreSQL</span>
             <span class="chip">Problem Solving</span>
             <span class="chip">Builder Mindset</span>
           </div>
@@ -762,26 +739,26 @@ footer{
           <div class="tl-item">
             <div class="tl-dot"></div>
             <div class="tl-year">2024</div>
-            <div class="tl-title">Started B.Tech in Cloud Computing</div>
+            <div class="tl-title">Started B.Tech at SRMIST</div>
             <div class="tl-desc">Began the journey — learned C, C++, and the fundamentals of computing.</div>
           </div>
           <div class="tl-item">
             <div class="tl-dot"></div>
             <div class="tl-year">2025</div>
             <div class="tl-title">Explored Full Stack Web Dev</div>
-            <div class="tl-desc">Picked up HTML, CSS, JS, PHP, and SQL. Built the Library Management System and Student Portal.</div>
+            <div class="tl-desc">Picked up HTML, CSS, JavaScript, Python, Java and SQL, and started building real frontend projects.</div>
           </div>
           <div class="tl-item">
             <div class="tl-dot"></div>
             <div class="tl-year">2026</div>
-            <div class="tl-title">Built Cloud Vault &amp; Levelled Up</div>
-            <div class="tl-desc">Launched Cloud Vault — a full cloud storage frontend. Dived deeper into Python, Java, and cloud infrastructure concepts.</div>
+            <div class="tl-title">Internship, Cloud Vault &amp; Big Data</div>
+            <div class="tl-desc">Launched Cloud Vault, joined SaiKet Systems as a Web Development Intern, and started a Hadoop-based flight delay analytics project.</div>
           </div>
           <div class="tl-item active">
             <div class="tl-dot"></div>
-            <div class="tl-year">Now — Building Belife</div>
-            <div class="tl-title">Building an App That Changes Lives</div>
-            <div class="tl-desc">Currently building <strong style="color:var(--green)">Building Belife</strong> — a mobile app for self-belief, habit building, and mindset growth. Because the right tool can genuinely change a person's life.</div>
+            <div class="tl-year">Now — BeLife is live</div>
+            <div class="tl-title">Shipped a Production Platform</div>
+            <div class="tl-desc">Launched <strong style="color:var(--green)">BeLife</strong> at www.belife.site — built from zero with Next.js, Express and PostgreSQL, and still improving it.</div>
           </div>
         </div>
       </div>
@@ -802,25 +779,25 @@ footer{
             <div class="cct-sub">pradeepparthasarathy1910@gmail.com</div>
           </div>
         </a>
-        <a href="https://github.com/pradeep-sys1910" target="_blank" class="contact-card reveal d1">
+        <a href="https://github.com/pradeep-sys1910" target="_blank" rel="noopener" class="contact-card reveal d1">
           <div class="contact-card-icon cc-violet">⌥</div>
           <div class="contact-card-text">
             <div class="cct-label">GitHub</div>
             <div class="cct-sub">github.com/pradeep-sys1910</div>
           </div>
         </a>
-        <a href="https://www.linkedin.com/in/pradeep-parthasarathy-0274793b1" target="_blank" class="contact-card reveal d2">
+        <a href="https://www.linkedin.com/in/pradeep-parthasarathy-0274793b1" target="_blank" rel="noopener" class="contact-card reveal d2">
           <div class="contact-card-icon cc-green">in</div>
           <div class="contact-card-text">
             <div class="cct-label">LinkedIn</div>
             <div class="cct-sub">Connect with me</div>
           </div>
         </a>
-        <a href="https://pradeep-sys1910.github.io/cloudvault-frontend/login.html" target="_blank" class="contact-card reveal d3">
-          <div class="contact-card-icon cc-orange">☁</div>
+        <a href="https://www.belife.site" target="_blank" rel="noopener" class="contact-card reveal d3">
+          <div class="contact-card-icon cc-orange">🌿</div>
           <div class="contact-card-text">
-            <div class="cct-label">Cloud Vault</div>
-            <div class="cct-sub">Live Demo</div>
+            <div class="cct-label">BeLife</div>
+            <div class="cct-sub">www.belife.site</div>
           </div>
         </a>
       </div>
@@ -845,23 +822,10 @@ document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 // SKILL BARS
 const so = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if(e.isIntersecting){
-      const card = e.target;
-      card.classList.add('visible');
-    }
+    if(e.isIntersecting) e.target.classList.add('visible');
   });
 },{threshold:0.25});
 document.querySelectorAll('.skill-card').forEach(el => so.observe(el));
-
-// PROGRESS BAR ANIMATE ON SCROLL
-const po = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting){
-      e.target.querySelectorAll('.cp-fill').forEach(b => b.style.transform='scaleX(1)');
-    }
-  });
-},{threshold:0.3});
-document.querySelectorAll('.proj.current').forEach(el => po.observe(el));
 </script>
 </body>
 </html>
